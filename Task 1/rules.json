@@ -1,0 +1,24 @@
+{
+  "timestamp_rules": {
+    "time_based_routing": {
+      "morning": {
+        "time_range": "04:00-11:59",
+        "hash_mod": 5,
+        "ip_pool_start": 0,
+        "description": "Morning traffic routed to first 5 IPs"
+      },
+      "afternoon": {
+        "time_range": "12:00-19:59",
+        "hash_mod": 5,
+        "ip_pool_start": 5,
+        "description": "Afternoon traffic routed to middle 5 IPs"
+      },
+      "night": {
+        "time_range": "20:00-03:59",
+        "hash_mod": 5,
+        "ip_pool_start": 10,
+        "description": "Night traffic routed to last 5 IPs"
+      }
+    }
+  }
+}
