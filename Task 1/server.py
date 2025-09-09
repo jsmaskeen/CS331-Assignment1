@@ -100,12 +100,12 @@ def run(host, port, rules_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--host", default="0.0.0.0")
+    parser.add_argument("--host", default="0.0.0.0",help="server host")
     parser.add_argument(
         "--port",
         type=int,
-        default=default_port,
+        default=default_port,help="server port"
     )
-    parser.add_argument("--rules", required=True, default="rules.json")
+    parser.add_argument("--rules", required=True, default="rules.json",help="rules file for DNS resolution")
     args = parser.parse_args()
     run(args.host, args.port, args.rules)

@@ -4,6 +4,8 @@
 - Jaskirat Singh Maskeen (23110146)
 - Karan Sagar Gandhi (23110157)
 
+## Report @ [`./Report/report.pdf`](./Report/report.pdf)
+
 ## Task 1
 
 How to run ?
@@ -14,8 +16,33 @@ C:\Users\Me\Assignment_1>cd  "Task 1"
 C:\Users\Me\Assignment_1\Task 1>make
 Starting server in a new cmd window...
 Waiting 2 seconds then starting client in a new cmd window...
-
 ```
+
+If you want to run client and server separatey:
+
+
+```sh
+C:\Users\Me\Assignment_1\Task 1>client.py -h
+usage: client.py [-h] --pcap PCAP [--server SERVER] [--port PORT] [--sleep_seconds SLEEP_SECONDS]
+
+options:
+  -h, --help            show this help message and exit
+  --pcap PCAP           input pcap file
+  --server SERVER       server IP
+  --port PORT           server port
+  --sleep_seconds SLEEP_SECONDS
+                        maximum number of seconds to sleep before sending each dns request
+
+C:\Users\Me\Assignment_1\Task 1>server.py -h
+usage: server.py [-h] [--host HOST] [--port PORT] --rules RULES
+
+options:
+  -h, --help     show this help message and exit
+  --host HOST    server host
+  --port PORT    server port
+  --rules RULES  rules file for DNS resolution
+```
+
 
 Flow summarised:
 
@@ -29,30 +56,3 @@ Flow summarised:
 6. Client artifically sleeps for few seconds to simulate, time difference between two DNS queries.
 
 ![](./Task%201/output.png)
-
-<!-- 
-DNS message:
-
-header 12 bytes
-
-ID      (2 bytes)
-Flags   (2 bytes)
-QDCOUNT (2 bytes)  # # of questions
-ANCOUNT (2 bytes)  # # of answers
-NSCOUNT (2 bytes)  # # of authority records
-ARCOUNT (2 bytes)  # # of additional records
-
-Question section (variable length):
-
-QNAME: domain name (labels, length-prefixed, terminated by 0)
-
-QTYPE: 2 bytes
-
-QCLASS: 2 bytes
-
-Answer / Authority / Additional sections (variable length, same basic structure as Resource Records).
-
-
-[4-byte length prefix][payload of that length]
-
--->
