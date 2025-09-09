@@ -22,13 +22,14 @@ Flow summarised:
 1. Filter the DNS query packets from the PCAP.
     - So, figure out the syntax of the DNS packets
     - [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt), Section 4.
-2. Add custom header and send to server over TCP.
+2. Add custom header and send to server over UDP.
 3. Server recieves, parses the custom header to decide the ip pool. 
 4. Server parses the DNS query to extract the domain.
-5. Server sends the domain, and the resolved ip back to client via TCP.
+5. Server sends the domain, and the resolved ip back to client via UDP.
 6. Client artifically sleeps for few seconds to simulate, time difference between two DNS queries.
 
 ![](./Task%201/output.png)
+
 <!-- 
 DNS message:
 
@@ -54,10 +55,4 @@ Answer / Authority / Additional sections (variable length, same basic structure 
 
 [4-byte length prefix][payload of that length]
 
-First, send the payload length as a 32-bit unsigned integer (big-endian).
-
-Then send exactly that many bytes of payload.
-
-Read 4 bytes → decode with struct.unpack(">I", raw_len) → tells you how long the message is.
-
-Call recieve_n_bytes(conn, length) to pull exactly that many bytes. -->
+-->
