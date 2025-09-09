@@ -10,18 +10,6 @@ default_port = (
 )
 
 
-# Receive exactly n bytes from a socket connection.
-# Keeps reading until the buffer has n bytes or connection closes.
-def recieve_n_bytes(conn, n):
-    buf = b""
-    while len(buf) < n:
-        chunk = conn.recv(n - len(buf))
-        if not chunk:
-            return None
-        buf += chunk
-    return buf
-
-
 def is_dns(data: bytes):
     # First 12 bytes = header
     if len(data) < 12:

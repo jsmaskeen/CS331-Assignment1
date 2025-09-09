@@ -1,8 +1,7 @@
 import argparse
 import socket
-import struct
 import json
-from helpers import recieve_n_bytes, DNSPacket, default_port
+from helpers import DNSPacket, default_port
 from rich import print
 from rich.markup import escape
 
@@ -62,23 +61,18 @@ def get_ip_from_rules(header, rules):
     idx = ((_id % mod) + int(period_routing["ip_pool_start"])) % len(IP_Pool)
     return IP_Pool[idx]
 
-# serve a single tcp client
-def serve_client(conn, addr, rules):
-    print(f"[red]{escape('[server]')}[/red] connection from {addr}")
+
+def run(host, port, rules_path):
+    rules = load_rules(rules_path)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # use UDP
+    sock.bind((host, port))
+    print(f"[red]{escape('[server]')}[/red] listening on {host}:{port}")
     try:
         while True:
-            # read 4-byte length prefix 
-            _len = recieve_n_bytes(conn, 4)
-            if not _len:
-                print(f"[red]{escape('[server]')}[/red] connection closed by client")
-                break
-            (length,) = struct.unpack("!I", _len)
+            # receive data and client address
+            payload, addr = sock.recvfrom(4096)
+            print(f"[red]{escape('[server]')}[/red] connection from {addr}")
             
-            # read message payload of prefix length
-            payload = recieve_n_bytes(conn, length)
-            if payload is None:
-                print(f"[red]{escape('[server]')}[/red] incomplete payload")
-                break
             try:
                 header, dns_bytes = split_custom_header_and_dns(payload)
                 domain = DNSPacket(dns_bytes).get_domain()
@@ -92,30 +86,16 @@ def serve_client(conn, addr, rules):
                     "error": str(e),
                 }
             resp_bytes = json.dumps(resp).encode("utf-8")
-            conn.sendall(struct.pack("!I", len(resp_bytes)) + resp_bytes)
+            
+            sock.sendto(resp_bytes, addr)
             print(
                 f"[red]{escape('[server]')}[/red] processed header={resp['header']} domain={resp['domain']} ip={resp['ip']}"
             )
-    finally:
-        conn.close()
-        print(f"[red]{escape('[server]')}[/red] closed {addr}")
-
-
-def run(host, port, rules_path):
-    rules = load_rules(rules_path)
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.bind((host, port))
-    sock.listen(5)
-    print(f"[red]{escape('[server]')}[/red] listening on {host}:{port}")
-    try:
-        while True:
-            conn, addr = sock.accept()
-            # handle one client at a time in same process
-            serve_client(conn, addr, rules)
     except KeyboardInterrupt:
         print(f"[red]{escape('[server]')}[/red] exiting")
     finally:
         sock.close()
+
 
 
 if __name__ == "__main__":
