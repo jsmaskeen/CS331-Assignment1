@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{dnsslides}
+S.~G. Kulkarni.
+\newblock {DNS PROTOCOL, MESSAGES}.
+\newblock Microsoft Teams, September 2025.
+
 \bibitem{rfc1035}
 P.~Mockapetris.
 \newblock {Domain Names - Implementation and Specification}.

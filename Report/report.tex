@@ -13,6 +13,8 @@
  \usepackage{sourcecodepro} 
  \usepackage{tabularx} 
  \usepackage{amssymb}
+ \usepackage{listings}
+ \usepackage{float}
 
  \title{Computer Networks\\ Assignment 1
 }
@@ -40,7 +42,6 @@
   \vskip 1em}
 \makeatother
 
-\usepackage{lipsum}  
 \usepackage{cmbright}
 
 \begin{document}
@@ -55,6 +56,50 @@
 \section{DNS Resolver}
 
 The objective of this task was to develop a custom DNS resolution system. The system consists of a client that parses DNS queries from a PCAP file and a server that resolves these queries based on a set of custom rules.
+
+\subsection{DNS Packet Structure}
+We read the RFC 1035~\cite{rfc1035}, and the packet structure is summarized in the figure below (following that we have given an example).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{1_1.png}
+    \caption{Packet structure from slides~\cite{dnsslides}.}
+\end{figure}
+
+Then we write our custom parser, which specifically parses the domain name from the DNS packet, as that is the only thing required from the DNS packet for this task. The meaning of fields can be read from the RFC, however the main part we had to implement was decompression of the labels. Strings which appear more than once are stored as a pointer and a offset, after their first appearance. For example:
+
+Suppose our quesiton is \texttt{A} (IPV4) record for \texttt{iitgn.ac.in}, and the answer will be \texttt{CNAME} pointing to \texttt{iitgn.ac.in}. So to save space, the answer will reuse the bytes of \texttt{iitgn.ac.in} which would be present in the question itself.
+
+\begin{lstlisting}
+Header (12 bytes):
+  TxnID  Flags  
+  1A 2B  81 80  
+   QD     AN  
+  00 01  00 01 
+   NS     AR 
+  00 00  00 00
+             ^
+            0x0C                                                         
+Question section (starts at offset 0x0C = 12 which is the size of header):
+This section is stored as length labelled format. 
+          0x10
+            v 
+  03 77 77 77 05 69 69 74 67 6E 02 61 63 02 69 6E 00
+     w  w  w     i  i  t  g  n     a  c     i  n  (terminated by 00)
+  00 01    (QTYPE = A)
+  00 01    (QCLASS = IN)
+
+Answer section:
+  C0 0C    (NAME = pointer to offset 0x0C -> "www.iitgn.ac.in")
+           (C0 means 1100 0000, which means that this is a pointer)
+  00 05    (TYPE = CNAME)
+  00 01    (CLASS = IN)
+  00 00 00 3C (TTL = 60)
+  00 02    (RDLENGTH = 2 bytes)
+  C0 10    (RDATA = pointer to offset 0x10 -> "iitgn.ac.in")
+           (C0 means 1100 0000, which means that this is a pointer)
+\end{lstlisting}
+
+
 
 \subsection{System Architecture and Flow}
 

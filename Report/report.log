@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.22)  9 SEP 2025 22:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.22)  10 SEP 2025 20:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -418,6 +418,40 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count287
+\lst@gtempboxa=\box54
+\lst@token=\toks26
+\lst@length=\count288
+\lst@currlwidth=\dimen163
+\lst@column=\count289
+\lst@pos=\count290
+\lst@lostspace=\dimen164
+\lst@width=\dimen165
+\lst@newlines=\count291
+\lst@lineno=\count292
+\lst@maxwidth=\dimen166
+
+(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count293
+\lst@skipnumbers=\count294
+\lst@framebox=\box55
+) (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cf
+g
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+ (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count295
+\float@exts=\toks27
+\float@box=\box56
+\@float@everytoks=\toks28
+\@floatcapt=\box57
+)
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
@@ -435,29 +469,9 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthL=\skip68
 \f@nch@widthC=\skip69
 \f@nch@widthR=\skip70
-\@temptokenb=\toks26
-) (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
-(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3
-keys2e.sty
-(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2025-01-18 L3 programming layer (loader) 
-
-(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
-ftex.def
-File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count287
-\l__pdf_internal_box=\box54
-))
-Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
-)
-Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count288
-\l__lipsum_a_int=\count289
-\l__lipsum_b_int=\count290
-
-(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)
-)
-(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\cmbright.sty
+\@temptokenb=\toks29
+) (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\cmbright.st
+y
 Package: cmbright 2005/04/13 v8.1 (WaS)
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 29.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -524,39 +538,43 @@ LaTeX Info: Redefining \LaTeX on input line 129.
 LaTeX Info: Redefining \LaTeXe on input line 139.
 LaTeX Font Info:    Trying to load font information for T1+cmbr on input line 1
 44.
-
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\t1cmbr.fd
 File: t1cmbr.fd 2005/04/13 v8.1 (WaS)
 ))
-(report.aux)
+(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+ftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count296
+\l__pdf_internal_box=\box58
+) (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 47.
 LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 4
-6.
+7.
 
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/ly1\ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    ... okay on input line 47.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -596,17 +614,17 @@ LaTeX Font Info:    ... okay on input line 46.
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
 kii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count291
-\scratchdimen=\dimen163
-\scratchbox=\box55
-\nofMPsegments=\count292
-\nofMParguments=\count293
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count294
-\MPscratchDim=\dimen164
-\MPnumerator=\count295
-\makeMPintoPDFobject=\count296
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count297
+\scratchdimen=\dimen167
+\scratchbox=\box59
+\nofMPsegments=\count298
+\nofMParguments=\count299
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count300
+\MPscratchDim=\dimen168
+\MPnumerator=\count301
+\makeMPintoPDFobject=\count302
+\everyMPtoPDFconversion=\toks31
 )
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
 base.sty
@@ -618,50 +636,58 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 46.
+Package hyperref Info: Link coloring OFF on input line 47.
  (report.out) (report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
+\c@lstlisting=\count303
 LaTeX Font Info:    Trying to load font information for OT1+cmbr on input line 
-50.
+51.
 
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\ot1cmbr.fd
 File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line
- 50.
+ 51.
 
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Trying to load font information for OMS+cmbrs on input line
- 50.
+ 51.
 
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\omscmbrs.fd
 File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <14.4> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 55.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <12> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 59.
-LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <10> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 63.
-LaTeX Font Info:    Trying to load font information for T1+cmtl on input line 6
-3.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 60.
+<1_1.png, id=40, 305.64188pt x 362.10281pt>
+File: 1_1.png Graphic file (type png)
+<use 1_1.png>
+Package pdftex.def Info: 1_1.png  used on input line 64.
+(pdftex.def)             Requested size: 145.11052pt x 171.9122pt.
+LaTeX Font Info:    Trying to load font information for T1+cmtl on input line 7
+0.
 
 (C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\t1cmtl.fd
 File: t1cmtl.fd 2005/04/13 v8.1 (WaS)
 )
 
 LaTeX Font Warning: Font shape `T1/cmtl/regular/n' undefined
-(Font)              using `T1/cmtl/m/n' instead on input line 63.
+(Font)              using `T1/cmtl/m/n' instead on input line 70.
 
-LaTeX Font Info:    Trying to load font information for TS1+cmbr on input line 
-82.
-(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\ts1cmbr.fd
-File: ts1cmbr.fd 2005/04/13 v8.1 (WaS)
-)
+
+Overfull \hbox (4.98912pt too wide) in paragraph at lines 70--71
+[]\T1/cmbr/m/n/10 Suppose our que-si-ton is \T1/cmtl/regular/n/10 A \T1/cmbr/m/
+n/10 (IPV4) record for \T1/cmtl/regular/n/10 iitgn.ac.in\T1/cmbr/m/n/10 , and t
+he an-swer will be \T1/cmtl/regular/n/10 CNAME \T1/cmbr/m/n/10 point-ing to \T1
+/cmtl/regular/n/10 iitgn.ac.in\T1/cmbr/m/n/10 .
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -673,33 +699,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1{C:/Users/GSRAJA/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/G
 SRAJA/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 
-{C:/Users/GSRAJA/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-supe
-r-ts1.enc}]
 
-! LaTeX Error: Unknown float option `H'.
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.89   00 
+          01    (QCLASS = IN) <./1_1.png>]
+LaTeX Font Info:    Trying to load font information for TS1+cmbr on input line 
+92.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 \begin{figure}[H]
-                       
-Option `H' ignored and `p' used.
+(C:\Users\GSRAJA\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\ts1cmbr.fd
+File: ts1cmbr.fd 2005/04/13 v8.1 (WaS)
+)
+LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <10> not available
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 108.
 
-<task1.png, id=56, 1144.275pt x 461.47406pt>
+
+[2{C:/Users/GSRAJA/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-su
+per-ts1.enc}]
+<task1.png, id=99, 1144.275pt x 461.47406pt>
 File: task1.png Graphic file (type png)
 <use task1.png>
-Package pdftex.def Info: task1.png  used on input line 115.
+Package pdftex.def Info: task1.png  used on input line 160.
 (pdftex.def)             Requested size: 483.69684pt x 195.07117pt.
 
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 119.
+(hyperref)                removing `\@ifnextchar' on input line 164.
 
 (report.bbl)
 
-[2]
-
-[3 <./task1.png>] (report.aux)
+[3
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.174 \end{document}
+                     <./task1.png>] (report.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -709,16 +746,16 @@ L3 programming layer <2025-01-18>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 84B323C31F13F0743C38F5FA2E87FB9D;1453.
+(rerunfilecheck)             Checksum: 3D532357AE205B5B00EA50E6B8502E25;1616.
  ) 
 Here is how much of TeX's memory you used:
- 11410 strings out of 473523
- 183578 string characters out of 5714146
- 670193 words of memory out of 5000000
- 34440 multiletter control sequences out of 15000+600000
+ 12718 strings out of 473523
+ 196717 string characters out of 5714146
+ 623913 words of memory out of 5000000
+ 35715 multiletter control sequences out of 15000+600000
  569906 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,11n,93p,565b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,565b,1853s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\GSRAJA\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cmbright/dpi600
 \cmbrsy10.pk> <C:\Users\GSRAJA\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cmbr
 ight/dpi600\cmbr10.pk><C:/Users/GSRAJA/AppData/Local/Programs/MiKTeX/fonts/type
@@ -726,9 +763,9 @@ ight/dpi600\cmbr10.pk><C:/Users/GSRAJA/AppData/Local/Programs/MiKTeX/fonts/type
 nts/type1/public/cm-super/sfbmr10.pfb><C:/Users/GSRAJA/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/cm-super/sfbmr17.pfb><C:/Users/GSRAJA/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on report.pdf (3 pages, 179852 bytes).
+Output written on report.pdf (3 pages, 204977 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 167 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
