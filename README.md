@@ -13,6 +13,8 @@ How to run ?
 ```sh
 C:\Users\Me\Assignment_1>cd  "Task 1"
 
+C:\Users\Me\Assignment_1>pip install -r requirements.txt
+
 C:\Users\Me\Assignment_1\Task 1>make
 Starting server in a new cmd window...
 Waiting 2 seconds then starting client in a new cmd window...
