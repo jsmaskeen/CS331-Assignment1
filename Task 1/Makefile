@@ -1,7 +1,7 @@
 SHELL := C:/Windows/System32/cmd.exe
 .SHELLFLAGS := /c
 
-PYTHON := py -3
+PYTHON := python
 PCAP := 3.pcap
 SERVER_IP := 127.0.0.1
 SERVER_PORT := 53535

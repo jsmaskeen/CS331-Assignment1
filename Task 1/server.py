@@ -43,17 +43,26 @@ def split_custom_header_and_dns(msg):
 def get_ip_from_rules(header, rules):
     # header format "HHMMSSID" -> hour = header[:2], id = header[6:8]
     hour = int(header[0:2])
+    minute = int(header[2:4])
     _id = int(header[6:8])
 
     time_based_routing = rules["timestamp_rules"]["time_based_routing"]
     # Determine which slot: morning/afternoon/night
-    period = None
-    if 4 <= hour <= 11:
-        period = "morning"
-    elif 12 <= hour <= 19:
-        period = "afternoon"
-    else:
-        period = "night"
+    for key, value in time_based_routing.items():
+        start, end = value["time_range"].split("-")
+        start_h, start_m = map(int, start.split(":"))
+        end_h, end_m = map(int, end.split(":"))
+        start_total = start_h * 60 + start_m
+        end_total = end_h * 60 + end_m
+        current_total = hour * 60 + minute
+
+        if end_total < start_total:  # time range crosses midnight
+            end_total += 24 * 60
+
+        if start_total <= current_total <= end_total or start_total <= current_total + 24 * 60 <= end_total:
+            period = key
+
+    assert period is not None, "Could not determine time period from header"
     
     period_routing = time_based_routing[period]
     mod = int(period_routing["hash_mod"])
