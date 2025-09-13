@@ -3,7 +3,7 @@ import dpkt
 import socket
 from datetime import datetime
 from prettytable import PrettyTable
-from helpers import is_dns, default_port
+from helpers import is_dns, default_port, DNSPacket
 from rich import print
 from rich.markup import escape
 from time import sleep
@@ -71,8 +71,11 @@ def process_pcap(pcap_path, server_host, server_port, sleep_seconds):
                     print(f"[green]{escape('[client]')}[/green] an error occurred: {e}")
                     break
 
-                # parse JSON response from server
+                # parse response from server
                 try:
+                    custom_header = response_bytes[:8].decode("ascii")
+                    dns_frame = response_bytes[8:]
+                    
                     resp = json.loads(response_bytes.decode("utf-8"))
                 except Exception:
                     resp = {
@@ -81,9 +84,8 @@ def process_pcap(pcap_path, server_host, server_port, sleep_seconds):
                         "ip": "error_in_parsing",
                     }
 
-                custom_header = resp.get("header", header)
-                domain = resp.get("domain", "<unknown>")
-                ip = resp.get("ip", "<unknown>")
+                dns_packet = DNSPacket(dns_frame)
+                domain, ip = dns_packet.get_answer_domain_and_ip()
                 queries.append((custom_header, domain, ip))
                 print(
                     f"[green]{escape('[client]')}[/green] {custom_header} {domain} resolved to {ip}"

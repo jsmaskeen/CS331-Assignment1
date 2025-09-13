@@ -72,6 +72,17 @@ def get_ip_from_rules(header, rules):
     return IP_Pool[idx]
 
 
+def populate_dns_frame(dns_bytes, ip) -> bytes:
+    # first 12 bytes = header
+    # make answer section = 1 in the header
+    if len(dns_bytes) < 12:
+        raise ValueError("Too short to be DNS packet")
+
+    dns_packet = DNSPacket(dns_bytes)
+    dns_packet.append_resolved_ip(ip)
+    return dns_packet.data
+
+
 def run(host, port, rules_path):
     rules = load_rules(rules_path)
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # use UDP
@@ -85,31 +96,15 @@ def run(host, port, rules_path):
             
             try:
                 header, dns_bytes = split_custom_header_and_dns(payload)
-
-                try:
-                    domain = DNSPacket(dns_bytes).get_domain()
-                    resolved_ip = get_ip_from_rules(header, rules)
-                    resp = {"header": header, "domain": domain, "ip": resolved_ip}
-                except Exception as e:
-                    resp = {
-                        "header": header,
-                        "domain": "error",
-                        "ip": "0.0.0.0",
-                        "error": str(e),
-                    }
-            except Exception as e:
-                resp = {
-                    "header": "ERR00000",
-                    "domain": "error",
-                    "ip": "0.0.0.0",
-                    "error": str(e),
-                }
-            
-            resp_bytes = json.dumps(resp).encode("utf-8")
-            
-            sock.sendto(resp_bytes, addr)
+                domain = DNSPacket(dns_bytes).get_domain()
+                resolved_ip = get_ip_from_rules(header, rules)
+                resp = populate_dns_frame(dns_bytes, resolved_ip)
+            except Exception:
+                continue
+                        
+            sock.sendto(header.encode("ascii") + resp, addr)
             print(
-                f"[red]{escape('[server]')}[/red] processed header={resp['header']} domain={resp['domain']} ip={resp['ip']}"
+                f"[red]{escape('[server]')}[/red] processed header={header} domain={domain} ip={resolved_ip}"
             )
     except KeyboardInterrupt:
         print(f"[red]{escape('[server]')}[/red] exiting")
