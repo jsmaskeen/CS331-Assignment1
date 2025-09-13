@@ -4,7 +4,7 @@
 - Jaskirat Singh Maskeen (23110146)
 - Karan Sagar Gandhi (23110157)
 
-## Report @ [`./Report/report.pdf`](./Report/report.pdf)
+## Report @ [`report.pdf`](./report.pdf)
 
 ## Task 1
 
@@ -58,3 +58,10 @@ Flow summarised:
 6. Client artifically sleeps for few seconds to simulate, time difference between two DNS queries.
 
 ![](./Task%201/output.png)
+
+Visualization of a packet (without the custom header) that the client sends.
+![](./Task%201/paccket_sent.png)
+
+
+Visualization of a packet (without the custom header) that the server sends.
+![](./Task%201/paccket_recieved.png)

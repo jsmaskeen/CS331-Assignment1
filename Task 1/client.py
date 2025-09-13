@@ -11,11 +11,11 @@ from random import random
 
 # # process a pcap file, extract DNS queries (UDP port 53),
 # # and send them to the custom DNS server with an added custom header.
-def process_pcap(pcap_path, server_host, server_port, sleep_seconds):
+def process_pcap(pcap_path, server_host, server_port, sleep_seconds,visualize):
     queries = []
     # single UDP socket for all queries
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
+    last_dns_packet_sent = None
     with open(pcap_path, "rb") as f:
         pcap = dpkt.pcap.Reader(f)
         i = 0  # counter for generating 2-digit sequence IDs
@@ -39,6 +39,7 @@ def process_pcap(pcap_path, server_host, server_port, sleep_seconds):
 
             # check if the packet is DNS packet
             if is_dns(udp.data):
+                last_dns_packet_sent = udp.data
                 # artificially sleep to simulate the actual delay between two dns calls, as we skip non DNS packets
                 if sleep_seconds != 0:
                     sleep_val = random() * sleep_seconds
@@ -72,18 +73,9 @@ def process_pcap(pcap_path, server_host, server_port, sleep_seconds):
                     break
 
                 # parse response from server
-                try:
-                    custom_header = response_bytes[:8].decode("ascii")
-                    dns_frame = response_bytes[8:]
+                custom_header = response_bytes[:8].decode("ascii")
+                dns_frame = response_bytes[8:]
                     
-                    resp = json.loads(response_bytes.decode("utf-8"))
-                except Exception:
-                    resp = {
-                        "header": header,
-                        "domain": "error_in_parsing",
-                        "ip": "error_in_parsing",
-                    }
-
                 dns_packet = DNSPacket(dns_frame)
                 domain, ip = dns_packet.get_answer_domain_and_ip()
                 queries.append((custom_header, domain, ip))
@@ -91,13 +83,19 @@ def process_pcap(pcap_path, server_host, server_port, sleep_seconds):
                     f"[green]{escape('[client]')}[/green] {custom_header} {domain} resolved to {ip}"
                 )
                 i += 1  # increment sequence ID for next query
-
+    
+    if visualize and last_dns_packet_sent!=None:
+        print("Packet sent to server")
+        DNSPacket(last_dns_packet_sent).visualize()
+        print("Packet recieved from the server")
+        dns_packet.visualize()
+        
     udp_socket.close()  # CLOse the socket
     return queries
 
 
-def main(pcap, server_host, server_port, sleep_seconds):
-    queries = process_pcap(pcap, server_host, server_port, sleep_seconds)
+def main(pcap, server_host, server_port, sleep_seconds,visualize):
+    queries = process_pcap(pcap, server_host, server_port, sleep_seconds,visualize)
     table = PrettyTable(["Custom Header", "Domain", "Resolved IP Address"])
 
     # Add results to table
@@ -105,9 +103,6 @@ def main(pcap, server_host, server_port, sleep_seconds):
         table.add_row([custom_header, domain, ip])
 
     print(table)
-
-
-import json
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -120,5 +115,6 @@ if __name__ == "__main__":
         default=2,
         help="maximum number of seconds to sleep before sending each dns request",
     )
+    parser.add_argument('--visualize',default=True,help='Visualse the last DNS packet in the request if there.')
     args = parser.parse_args()
-    main(args.pcap, args.server, args.port, args.sleep_seconds)
+    main(args.pcap, args.server, args.port, args.sleep_seconds,args.visualize)
