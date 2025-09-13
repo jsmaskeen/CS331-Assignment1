@@ -27,7 +27,8 @@ def is_dns(data: bytes):
 
 # DNS parser to extract queried domain name
 class DNSPacket:
-    def __init__(self, data: bytes):
+    def __init__(self, data: bytes,response=None):
+        self.is_created_response = response
         self.data = data
 
     def get_domain(self) -> str:
@@ -141,6 +142,9 @@ class DNSPacket:
         data = bytearray(self.data)
         data[6:8] = b'\x00\x01' # increment answer count
         assert self.get_question_count() == 1, "No question section to answer" # only support 1 question
+        if self.is_created_response:
+            # set the reponse code in flags to be 1
+            data[2] |= 0b10000000
         data += b'\xc0\x0c' # Name: Pointer to offset 12 this is where the domain name is present
         data += b'\x00\x01' # Type A
         data += b'\x00\x01' # Class IN

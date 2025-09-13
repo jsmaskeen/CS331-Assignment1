@@ -78,7 +78,7 @@ def populate_dns_frame(dns_bytes, ip) -> bytes:
     if len(dns_bytes) < 12:
         raise ValueError("Too short to be DNS packet")
 
-    dns_packet = DNSPacket(dns_bytes)
+    dns_packet = DNSPacket(dns_bytes,response=True)
     dns_packet.append_resolved_ip(ip)
     return dns_packet.data
 
