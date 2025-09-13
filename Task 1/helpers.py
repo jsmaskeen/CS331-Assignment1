@@ -247,12 +247,12 @@ class DNSPacket:
                 # some common records
                 if rtype == 1: # A record
                     ip = ".".join(map(str, rdata))
-                    print(f"   |- Addr:  {ip}")
+                    print(f" | |- Addr:  {ip}")
                 elif rtype == 5: # CNAME record
                     cname_labels = self.read_labels(pos)
-                    print(f"   |- CNAME: {'.'.join(cname_labels)}")
+                    print(f" | |- CNAME: {'.'.join(cname_labels)}")
                 else:
-                    print(f"   |- Data:  {rdata.hex()}")
+                    print(f" | |- Data:  {rdata.hex()}")
                 
                 pos += rdlength
         
