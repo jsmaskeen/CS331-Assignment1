@@ -61,6 +61,7 @@ def get_ip_from_rules(header, rules):
 
         if start_total <= current_total <= end_total or start_total <= current_total + 24 * 60 <= end_total:
             period = key
+            break
 
     assert period is not None, "Could not determine time period from header"
     
@@ -84,9 +85,18 @@ def run(host, port, rules_path):
             
             try:
                 header, dns_bytes = split_custom_header_and_dns(payload)
-                domain = DNSPacket(dns_bytes).get_domain()
-                resolved_ip = get_ip_from_rules(header, rules)
-                resp = {"header": header, "domain": domain, "ip": resolved_ip}
+
+                try:
+                    domain = DNSPacket(dns_bytes).get_domain()
+                    resolved_ip = get_ip_from_rules(header, rules)
+                    resp = {"header": header, "domain": domain, "ip": resolved_ip}
+                except Exception as e:
+                    resp = {
+                        "header": header,
+                        "domain": "error",
+                        "ip": "0.0.0.0",
+                        "error": str(e),
+                    }
             except Exception as e:
                 resp = {
                     "header": "ERR00000",
@@ -94,6 +104,7 @@ def run(host, port, rules_path):
                     "ip": "0.0.0.0",
                     "error": str(e),
                 }
+            
             resp_bytes = json.dumps(resp).encode("utf-8")
             
             sock.sendto(resp_bytes, addr)
