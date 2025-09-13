@@ -60,8 +60,8 @@ Flow summarised:
 ![](./Task%201/output.png)
 
 Visualization of a packet (without the custom header) that the client sends.
-![](./Task%201/paccket_sent.png)
+![](./Task%201/packet_sent.png)
 
 
 Visualization of a packet (without the custom header) that the server sends.
-![](./Task%201/paccket_recieved.png)
+![](./Task%201/packet_recieved.png)
