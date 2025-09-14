@@ -1,0 +1,8 @@
+New-NetFirewallRule -DisplayName "Block All UDP" -Direction Inbound  -Protocol UDP -Action Block -Profile Any -Enabled True
+New-NetFirewallRule -DisplayName "Block All UDP Outbound" -Direction Outbound -Protocol UDP -Action Block -Profile Any -Enabled True
+
+Get-NetFirewallRule -DisplayName "Block All UDP","Block All UDP Outbound" |
+  Format-Table DisplayName,Enabled,Direction,Action,Profile
+
+Remove-NetFirewallRule -DisplayName "Block All UDP"
+Remove-NetFirewallRule -DisplayName "Block All UDP Outbound"
