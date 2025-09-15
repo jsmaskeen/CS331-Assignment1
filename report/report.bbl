@@ -1,0 +1,34 @@
+\begin{thebibliography}{1}
+
+\bibitem{LinuxTracerouteMan}
+traceroute(8) — linux manual page.
+\newblock \url{https://linux.die.net/man/8/traceroute}.
+\newblock Accessed 2025-09-15.
+
+\bibitem{Carrigan2019_RedHat_Traceroute}
+Tyler Carrigan.
+\newblock Traceroute: Finding meaning among the stars.
+\newblock Red Hat Blog,
+  \url{https://www.redhat.com/en/blog/traceroute-finding-meaning}, October
+  2019.
+\newblock Accessed 2025-09-15.
+
+\bibitem{dnsslides}
+S.~G. Kulkarni.
+\newblock {DNS PROTOCOL, MESSAGES}.
+\newblock Microsoft Teams, September 2025.
+
+\bibitem{ServerFault_2011_traceroute}
+Larry and Sachin Divekar.
+\newblock What does ``***'' mean when traceroute.
+\newblock
+  \url{https://serverfault.com/questions/334029/what-does-mean-when-traceroute},
+  2011.
+\newblock Stack Exchange, Question asked Nov 23, 2011; accessed 2025-09-15.
+
+\bibitem{rfc1035}
+P.~Mockapetris.
+\newblock {Domain Names - Implementation and Specification}.
+\newblock RFC 1035, November 1987.
+
+\end{thebibliography}

@@ -4,7 +4,9 @@
 - Jaskirat Singh Maskeen (23110146)
 - Karan Sagar Gandhi (23110157)
 
-## Report @ [`report.pdf`](./report.pdf)
+### Chosen pcap file : 3.pcap,  $\because 146 + 157 \equiv 3 \pmod{10} $
+
+## Report @ [`./report/report.pdf`](./report/report.pdf)
 
 ## Task 1
 
@@ -57,6 +59,8 @@ Flow summarised:
 5. Server sends the domain, and the resolved ip back to client via UDP.
 6. Client artifically sleeps for few seconds to simulate, time difference between two DNS queries.
 
+## Task 2
+
 ![](./Task%201/output.png)
 
 Visualization of a packet (without the custom header) that the client sends.
@@ -65,3 +69,10 @@ Visualization of a packet (without the custom header) that the client sends.
 
 Visualization of a packet (without the custom header) that the server sends.
 ![](./Task%201/packet_recieved.png)
+
+
+## How to Compile Report ?
+
+Run [`./report/compile.bat`](./report/compile.bat)
+
+Report @ [`./report/report.pdf`](./report/report.pdf)
