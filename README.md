@@ -59,8 +59,6 @@ Flow summarised:
 5. Server sends the domain, and the resolved ip back to client via UDP.
 6. Client artifically sleeps for few seconds to simulate, time difference between two DNS queries.
 
-## Task 2
-
 ![](./Task%201/output.png)
 
 Visualization of a packet (without the custom header) that the client sends.
@@ -70,6 +68,8 @@ Visualization of a packet (without the custom header) that the client sends.
 Visualization of a packet (without the custom header) that the server sends.
 ![](./Task%201/packet_recieved.png)
 
+## Task 2
+Refer to the report.
 
 ## How to Compile Report ?
 
