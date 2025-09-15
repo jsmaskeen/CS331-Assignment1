@@ -31,4 +31,12 @@ P.~Mockapetris.
 \newblock {Domain Names - Implementation and Specification}.
 \newblock RFC 1035, November 1987.
 
+\bibitem{systemd_issue19554_comment1409535760}
+sergey safarov.
+\newblock Comment on issue \#19554: “resolve: force use tcp”.
+\newblock GitHub issue comment,
+  \url{https://github.com/systemd/systemd/issues/19554\#issuecomment-1409535760},
+  May 2021.
+\newblock Comment ID 1409535760, systemd/systemd repository.
+
 \end{thebibliography}

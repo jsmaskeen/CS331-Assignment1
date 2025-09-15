@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.22)  15 SEP 2025 22:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.22)  15 SEP 2025 23:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -935,7 +935,7 @@ File: tracert windows discord block.png Graphic file (type png)
 Package pdftex.def Info: tracert windows discord block.png  used on input line 
 369.
 (pdftex.def)             Requested size: 483.69684pt x 207.59291pt.
-<block udp connections windows.png, id=206, 743.77875pt x 522.45187pt>
+<block udp connections windows.png, id=207, 743.77875pt x 522.45187pt>
 File: block udp connections windows.png Graphic file (type png)
 <use block udp connections windows.png>
 Package pdftex.def Info: block udp connections windows.png  used on input line 
@@ -980,10 +980,10 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 957C072335FB7426BEDA673C4E2C257C;4738.
  ) 
 Here is how much of TeX's memory you used:
- 12868 strings out of 473523
- 200476 string characters out of 5714146
- 629391 words of memory out of 5000000
- 35825 multiletter control sequences out of 15000+600000
+ 12870 strings out of 473523
+ 200555 string characters out of 5714146
+ 629449 words of memory out of 5000000
+ 35826 multiletter control sequences out of 15000+600000
  569906 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,1137b,1236s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -994,9 +994,9 @@ ight/dpi600\cmbr10.pk><C:/Users/GSRAJA/AppData/Local/Programs/MiKTeX/fonts/type
 nts/type1/public/cm-super/sfbmr10.pfb><C:/Users/GSRAJA/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/cm-super/sfbmr17.pfb><C:/Users/GSRAJA/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on report.pdf (11 pages, 3044959 bytes).
+Output written on report.pdf (11 pages, 3046715 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 94 named destinations out of 1000 (max. 500000)
+ 301 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
  212 words of extra memory for PDF output out of 10000 (max. 10000000)
 
